@@ -294,36 +294,36 @@ const services = [
 
 function Services() {
   return (
-    <section id="services" className="relative py-24 lg:min-h-screen lg:py-28 flex items-center overflow-hidden">
+    <section id="services" className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-dots opacity-50" />
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 w-full">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8">
           <div className="max-w-2xl">
-            <span className="text-xs tracking-[0.3em] uppercase text-primary font-medium">What we do</span>
-            <h2 className="mt-3 font-display text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">What we do</span>
+            <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
               A complete practice, <span className="text-gradient">under one roof.</span>
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-md">
+          <p className="text-sm text-muted-foreground max-w-md">
             Every treatment is planned digitally, executed by specialists, and delivered in a calm, private environment.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {services.map((s, i) => (
-            <div key={s.title} className="group card-luxe p-6 hover:-translate-y-2 hover:shadow-luxe cursor-pointer relative overflow-hidden">
+            <div key={s.title} className="group card-luxe p-4 hover:-translate-y-2 hover:shadow-luxe cursor-pointer relative overflow-hidden">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(135deg, rgba(15,111,255,0.06), rgba(34,199,242,0.08))" }} />
               <div className="relative">
-                <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-5 transition-all duration-500 group-hover:scale-110" style={{ background: "var(--gradient-primary)", boxShadow: "0 10px 24px -8px rgba(15,111,255,0.5)" }}>
-                  <s.icon size={20} className="text-white" />
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 transition-all duration-500 group-hover:scale-110" style={{ background: "var(--gradient-primary)", boxShadow: "0 10px 24px -8px rgba(15,111,255,0.5)" }}>
+                  <s.icon size={16} className="text-white" />
                 </div>
-                <h3 className="font-display text-lg font-medium mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                <div className="mt-5 flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-2 group-hover:translate-x-0">
-                  Learn more <ArrowUpRight size={14} />
+                <h3 className="font-display text-sm font-medium mb-1.5">{s.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+                <div className="mt-3 flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-2 group-hover:translate-x-0">
+                  Learn more <ArrowUpRight size={12} />
                 </div>
               </div>
-              {i === 0 && <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full opacity-30" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.5), transparent 70%)" }} />}
+              {i === 0 && <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full opacity-30" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.5), transparent 70%)" }} />}
             </div>
           ))}
         </div>
