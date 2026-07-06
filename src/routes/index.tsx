@@ -143,7 +143,6 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
           </nav>
 
           <div className="hidden lg:flex items-center gap-2">
-            <ThemeToggle />
             <a
               href="#contact"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-[13px] font-medium text-white transition hover:-translate-y-0.5"
