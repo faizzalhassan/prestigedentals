@@ -53,7 +53,7 @@ export function ThemeToggle() {
       <DropdownMenuTrigger asChild>
         <button
           aria-label="Toggle theme"
-          className="p-2 rounded-full hover:bg-accent-soft transition-colors text-foreground/80 hover:text-foreground"
+          className="p-2 rounded-full hover:bg-accent-soft transition-colors text-foreground/80 hover:text-foreground cursor-pointer"
         >
           <Sun size={16} className="dark:hidden" />
           <Moon size={16} className="hidden dark:inline" />

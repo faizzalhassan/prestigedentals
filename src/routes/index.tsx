@@ -130,7 +130,7 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
             <ThemeToggle />
 
             <button
-              className="p-2 rounded-full hover:bg-accent-soft transition"
+              className="p-2 rounded-full hover:bg-accent-soft transition cursor-pointer"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Menu"
             >
@@ -159,7 +159,7 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
           <button
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
-            className="p-2 rounded-full hover:bg-accent-soft transition"
+            className="p-2 rounded-full hover:bg-accent-soft transition cursor-pointer"
           >
             <X size={18} />
           </button>
