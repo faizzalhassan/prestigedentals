@@ -378,20 +378,20 @@ function BeforeAfterSection() {
 /* ─────────────  GALLERY (Bento)  ───────────── */
 function Gallery() {
   return (
-    <section id="gallery" className="relative py-24 lg:min-h-screen lg:py-28 flex items-center overflow-hidden">
+    <section id="gallery" className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]" />
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 w-full">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3 mb-6">
           <div>
-            <span className="text-xs tracking-[0.3em] uppercase text-primary font-medium">The Clinic</span>
-            <h2 className="mt-3 font-display text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">The Clinic</span>
+            <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
               A space designed <br className="hidden sm:block" /><span className="text-gradient">to disarm anxiety.</span>
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-sm">Every corner considered — from the light temperature to the scent of the reception.</p>
+          <p className="text-sm text-muted-foreground max-w-sm">Every corner considered — from the light temperature to the scent of the reception.</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[160px] md:auto-rows-[180px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[110px] md:auto-rows-[140px]">
           <GalleryCard src={galReception} alt="Marble reception with ambient lighting" label="Reception" className="col-span-2 row-span-2" />
           <GalleryCard src={galTreatment} alt="Modern white dental treatment room" label="Treatment Room" className="col-span-2 row-span-2" />
           <GalleryCard src={galLounge} alt="Boutique-style waiting lounge" label="Waiting Lounge" className="col-span-2 row-span-1" />
