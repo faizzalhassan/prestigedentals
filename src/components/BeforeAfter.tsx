@@ -42,8 +42,9 @@ export function BeforeAfter({ before, after, alt }: Props) {
     <div
       ref={ref}
       className="relative w-full h-full overflow-hidden rounded-3xl select-none touch-none"
-      onMouseDown={(e) => { dragging.current = true; update(e.clientX); }}
-      onTouchStart={(e) => { dragging.current = true; update(e.touches[0].clientX); }}
+      onPointerDownCapture={(e) => e.stopPropagation()}
+      onMouseDown={(e) => { e.stopPropagation(); dragging.current = true; update(e.clientX); }}
+      onTouchStart={(e) => { e.stopPropagation(); dragging.current = true; update(e.touches[0].clientX); }}
     >
       <img src={after} alt={`${alt} after`} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
       <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
