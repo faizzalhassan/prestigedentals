@@ -140,19 +140,37 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile side drawer */}
       <div
-        className={`lg:hidden fixed inset-x-4 top-16 rounded-2xl bg-white/95 backdrop-blur-xl border border-border shadow-luxe overflow-hidden transition-all duration-300 ${
-          menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+        className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
+          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setMenuOpen(false)}
+      >
+        <div className="absolute inset-0 bg-foreground/30 backdrop-blur-sm" />
+      </div>
+      <aside
+        className={`lg:hidden fixed top-0 right-0 z-50 h-full w-[78%] max-w-xs bg-surface border-l border-border shadow-luxe transition-transform duration-300 ease-out ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-4 flex flex-col gap-0.5">
+        <div className="flex items-center justify-between px-5 h-16 border-b border-border">
+          <span className="font-display font-semibold text-[15px]">Menu</span>
+          <button
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+            className="p-2 rounded-full hover:bg-accent-soft transition"
+          >
+            <X size={18} />
+          </button>
+        </div>
+        <div className="p-5 flex flex-col gap-1">
           {nav.map((n) => (
             <a
               key={n.href}
               href={n.href}
               onClick={() => setMenuOpen(false)}
-              className="px-3 py-2.5 rounded-lg hover:bg-accent-soft text-sm font-medium"
+              className="px-3 py-3 rounded-lg hover:bg-accent-soft text-sm font-medium"
             >
               {n.label}
             </a>
@@ -160,13 +178,13 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-2 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-sm font-medium text-white"
+            className="mt-4 inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-full text-sm font-medium text-white"
             style={{ background: "var(--gradient-primary)" }}
           >
             <Calendar size={14} /> Book Appointment
           </a>
         </div>
-      </div>
+      </aside>
     </header>
   );
 }
