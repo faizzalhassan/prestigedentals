@@ -31,7 +31,7 @@ import p1 from "@/assets/patient-1.jpg";
 import p2 from "@/assets/patient-2.jpg";
 import p3 from "@/assets/patient-3.jpg";
 import { BeforeAfter } from "@/components/BeforeAfter";
-import { ThemeToggle } from "@/components/ThemeToggle";
+
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 export const Route = createFileRoute("/")({
