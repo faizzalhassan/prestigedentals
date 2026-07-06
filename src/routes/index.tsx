@@ -518,9 +518,9 @@ function GalleryCard({ src, alt, label, className }: { src: string; alt: string;
 
 /* ─────────────  TESTIMONIALS  ───────────── */
 const testimonials = [
-  { img: p1, name: "Sarah Whitfield", treat: "Porcelain Veneers", quote: "I've never felt more myself. The team walked me through a digital preview before we started — it looked exactly like the final result." },
-  { img: p2, name: "James Okafor", treat: "Invisalign", quote: "Nine months, zero disruption to my work life. The clinic feels more like a design studio than a dental office." },
-  { img: p3, name: "Mia Tanaka", treat: "Whitening + Cleaning", quote: "Genuinely the most calming healthcare experience I've had. My teeth are six shades brighter and I'm still smiling." },
+  { img: p1, name: "Ayesha Siddiqui", treat: "Porcelain Veneers", quote: "I've never felt more myself. The team walked me through a digital preview before we started — it looked exactly like the final result." },
+  { img: p2, name: "Bilal Ahmed", treat: "Invisalign", quote: "Nine months, zero disruption to my work life. The clinic feels more like a design studio than a dental office." },
+  { img: p3, name: "Hina Raza", treat: "Whitening + Cleaning", quote: "Genuinely the most calming healthcare experience I've had. My teeth are six shades brighter and I'm still smiling." },
 ];
 
 function Testimonials() {
