@@ -130,86 +130,82 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
 /* ─────────────  HERO  ───────────── */
 function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-28 pb-16 lg:pt-24 lg:pb-0 bg-hero overflow-hidden">
-      {/* decorative */}
+    <section id="home" className="relative h-screen min-h-[640px] flex items-center pt-20 bg-hero overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-60 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
-      <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full animate-blob" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.35), transparent 70%)" }} />
-      <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full animate-blob" style={{ background: "radial-gradient(circle, rgba(15,111,255,0.25), transparent 70%)", animationDelay: "3s" }} />
+      <div className="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full animate-blob" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.35), transparent 70%)" }} />
+      <div className="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full animate-blob" style={{ background: "radial-gradient(circle, rgba(15,111,255,0.25), transparent 70%)", animationDelay: "3s" }} />
 
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
-        {/* Left */}
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-8 items-center w-full">
         <div className="animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-xs font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-[11px] font-medium mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
             Accepting new patients · Same-week appointments
           </div>
-          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.03em] font-medium">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.03em] font-medium">
             Premium dental care <br />
             <span className="text-gradient">designed around</span> <br />
             your smile.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-lg leading-relaxed">
+          <p className="mt-4 text-sm lg:text-base text-muted-foreground max-w-md leading-relaxed">
             A serene, technology-first clinic where craftsmanship meets comfort. From routine care to complete smile makeovers — done with precision.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#contact" className="btn-primary btn-primary-hover">
-              <Calendar size={18} /> Book Appointment <ArrowRight size={16} />
+          <div className="mt-5 flex flex-wrap items-center gap-2.5">
+            <a href="#contact" className="btn-primary btn-primary-hover text-sm">
+              <Calendar size={16} /> Book Appointment <ArrowRight size={14} />
             </a>
-            <a href="#services" className="btn-ghost hover:bg-white">
+            <a href="#services" className="btn-ghost hover:bg-white text-sm">
               View services
             </a>
           </div>
 
-          <div className="mt-12 grid grid-cols-3 gap-4 max-w-md">
+          <div className="mt-7 grid grid-cols-3 gap-3 max-w-sm">
             {[
               { k: "15+", v: "Years" },
               { k: "5k+", v: "Patients" },
               { k: "4.9★", v: "Google" },
             ].map((s) => (
               <div key={s.v}>
-                <div className="font-display text-2xl font-semibold text-gradient">{s.k}</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">{s.v}</div>
+                <div className="font-display text-xl font-semibold text-gradient">{s.k}</div>
+                <div className="text-[10px] text-muted-foreground uppercase tracking-wider mt-0.5">{s.v}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right */}
-        <div className="relative h-[520px] lg:h-[620px]">
+        <div className="relative h-[340px] lg:h-[460px] hidden md:block">
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="absolute w-[420px] h-[420px] rounded-full" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.35), transparent 70%)", filter: "blur(40px)" }} />
-            <img src={heroTooth} alt="Premium 3D tooth illustration" className="relative w-[440px] h-[440px] object-contain animate-float-slow drop-shadow-2xl" width={440} height={440} />
+            <div className="absolute w-[320px] h-[320px] rounded-full" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.35), transparent 70%)", filter: "blur(40px)" }} />
+            <img src={heroTooth} alt="Premium 3D tooth illustration" className="relative w-[340px] h-[340px] lg:w-[400px] lg:h-[400px] object-contain animate-float-slow drop-shadow-2xl" width={400} height={400} />
           </div>
 
-          {/* Floating cards */}
-          <div className="absolute top-8 left-0 glass-strong rounded-2xl p-4 animate-float-med" style={{ animationDelay: "0.5s" }}>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white" style={{ background: "var(--gradient-primary)" }}>
-                <Star size={18} fill="white" />
+          <div className="absolute top-4 left-0 glass-strong rounded-2xl p-3 animate-float-med" style={{ animationDelay: "0.5s" }}>
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white" style={{ background: "var(--gradient-primary)" }}>
+                <Star size={14} fill="white" />
               </div>
               <div>
-                <div className="text-xs text-muted-foreground">Google Rating</div>
-                <div className="font-display font-semibold text-lg leading-none mt-0.5">4.9 / 5.0</div>
+                <div className="text-[10px] text-muted-foreground">Google Rating</div>
+                <div className="font-display font-semibold text-sm leading-none mt-0.5">4.9 / 5.0</div>
               </div>
             </div>
           </div>
 
-          <div className="absolute bottom-20 right-0 glass-strong rounded-2xl p-4 animate-float-med" style={{ animationDelay: "1.5s" }}>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-primary bg-accent-soft">
-                <Users size={18} />
+          <div className="absolute bottom-8 right-0 glass-strong rounded-2xl p-3 animate-float-med" style={{ animationDelay: "1.5s" }}>
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center text-primary bg-accent-soft">
+                <Users size={14} />
               </div>
               <div>
-                <div className="text-xs text-muted-foreground">Happy patients</div>
-                <div className="font-display font-semibold text-lg leading-none mt-0.5">5,000+</div>
+                <div className="text-[10px] text-muted-foreground">Happy patients</div>
+                <div className="font-display font-semibold text-sm leading-none mt-0.5">5,000+</div>
               </div>
             </div>
           </div>
 
-          <div className="absolute top-1/2 -right-4 glass-strong rounded-2xl p-3 animate-float-med" style={{ animationDelay: "1s" }}>
-            <div className="flex items-center gap-2">
-              <Shield size={16} className="text-primary" />
-              <span className="text-xs font-medium">ADA Certified</span>
+          <div className="absolute top-1/2 -right-2 glass-strong rounded-xl p-2.5 animate-float-med" style={{ animationDelay: "1s" }}>
+            <div className="flex items-center gap-1.5">
+              <Shield size={13} className="text-primary" />
+              <span className="text-[11px] font-medium">ADA Certified</span>
             </div>
           </div>
         </div>
