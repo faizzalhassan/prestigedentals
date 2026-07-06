@@ -25,8 +25,8 @@ import smile1 from "@/assets/smile-1.jpg";
 import smile1b from "@/assets/smile-1-before.jpg";
 import smile2 from "@/assets/smile-2.jpg";
 import smile2b from "@/assets/smile-2-before.jpg";
-import smile3 from "@/assets/smile-3.jpg";
-import smile3b from "@/assets/smile-3-before.jpg";
+import smileBraces from "@/assets/smile-braces-after.jpg";
+import smileBracesB from "@/assets/smile-braces-before.jpg";
 import p1 from "@/assets/patient-1.jpg";
 import p2 from "@/assets/patient-2.jpg";
 import p3 from "@/assets/patient-3.jpg";
@@ -374,7 +374,7 @@ function Services() {
 const transformations = [
   { before: smile1b, after: smile1, alt: "Veneers smile transformation", title: "Porcelain Veneers", sub: "12 units · 2 visits" },
   { before: smile2b, after: smile2, alt: "Whitening transformation", title: "Whitening + Bonding", sub: "1 session · 45 min" },
-  { before: smile3b, after: smile3, alt: "Invisalign transformation", title: "Invisalign", sub: "9 months treatment" },
+  { before: smileBracesB, after: smileBraces, alt: "Braces transformation", title: "Braces", sub: "18 months treatment" },
 ];
 
 function BeforeAfterSection() {
