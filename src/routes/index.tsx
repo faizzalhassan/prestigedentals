@@ -427,30 +427,30 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-24 lg:min-h-screen lg:py-28 flex items-center overflow-hidden">
+    <section id="testimonials" className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-mesh opacity-60" />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full" style={{ background: "radial-gradient(circle, rgba(15,111,255,0.15), transparent 70%)", filter: "blur(40px)" }} />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full" style={{ background: "radial-gradient(circle, rgba(15,111,255,0.15), transparent 70%)", filter: "blur(40px)" }} />
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 w-full">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-xs tracking-[0.3em] uppercase text-primary font-medium">Loved by patients</span>
-          <h2 className="mt-3 font-display text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">Loved by patients</span>
+          <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
             824 verified <span className="text-gradient">5-star reviews.</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-4">
           {testimonials.map((t, i) => (
-            <div key={t.name} className="card-luxe p-7 hover:-translate-y-2 hover:shadow-luxe transition duration-500" style={{ animationDelay: `${i * 100}ms` }}>
-              <div className="flex gap-0.5 text-primary mb-4">
-                {[...Array(5)].map((_, k) => <Star key={k} size={16} fill="currentColor" />)}
+            <div key={t.name} className="card-luxe p-5 hover:-translate-y-2 hover:shadow-luxe transition duration-500" style={{ animationDelay: `${i * 100}ms` }}>
+              <div className="flex gap-0.5 text-primary mb-3">
+                {[...Array(5)].map((_, k) => <Star key={k} size={13} fill="currentColor" />)}
               </div>
-              <p className="text-foreground/85 leading-relaxed text-[15px]">"{t.quote}"</p>
-              <div className="mt-6 flex items-center gap-3 pt-5 border-t border-border">
-                <img src={t.img} alt={t.name} className="w-11 h-11 rounded-full object-cover" width={64} height={64} loading="lazy" />
+              <p className="text-foreground/85 leading-relaxed text-[13px]">"{t.quote}"</p>
+              <div className="mt-4 flex items-center gap-2.5 pt-4 border-t border-border">
+                <img src={t.img} alt={t.name} className="w-9 h-9 rounded-full object-cover" width={64} height={64} loading="lazy" />
                 <div>
-                  <div className="font-medium text-sm">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.treat}</div>
+                  <div className="font-medium text-xs">{t.name}</div>
+                  <div className="text-[11px] text-muted-foreground">{t.treat}</div>
                 </div>
               </div>
             </div>
