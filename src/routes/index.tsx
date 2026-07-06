@@ -350,15 +350,24 @@ function About() {
 }
 
 /* ─────────────  SERVICES  ───────────── */
+import svcCosmetic from "@/assets/svc-cosmetic.jpg";
+import svcWhitening from "@/assets/svc-whitening.jpg";
+import svcImplants from "@/assets/svc-implants.jpg";
+import svcInvisalign from "@/assets/svc-invisalign.jpg";
+import svcGeneral from "@/assets/svc-general.jpg";
+import svcVeneers from "@/assets/svc-veneers.jpg";
+import svcMakeover from "@/assets/svc-makeover.jpg";
+import svcRootCanal from "@/assets/svc-rootcanal.jpg";
+
 const services = [
-  { icon: Smile, title: "Cosmetic Dentistry", desc: "Bespoke smile design using digital previews before treatment.", color: "#0f6fff" },
-  { icon: Sparkles, title: "Teeth Whitening", desc: "In-clinic Zoom whitening — 6 shades brighter in 45 minutes.", color: "#f5b301" },
-  { icon: Shield, title: "Dental Implants", desc: "Titanium and zirconia implants placed with 3D-guided precision.", color: "#22c7f2" },
-  { icon: Zap, title: "Invisalign & Ortho", desc: "Clear aligner therapy for adults and teens with iTero scans.", color: "#8b5cf6" },
-  { icon: Heart, title: "General Dentistry", desc: "Comprehensive check-ups, hygiene and fillings for the whole family.", color: "#ef4444" },
-  { icon: Award, title: "Porcelain Veneers", desc: "Ultra-thin hand-crafted veneers matched to your facial harmony.", color: "#ec4899" },
-  { icon: Sparkles, title: "Smile Makeover", desc: "Full mouth reconstruction combining multiple disciplines.", color: "#10b981" },
-  { icon: Shield, title: "Root Canal Therapy", desc: "Painless microscopic endodontics with same-day crowns.", color: "#f97316" },
+  { icon: Smile, title: "Cosmetic Dentistry", desc: "Bespoke smile design using digital previews before treatment.", color: "#0f6fff", image: svcCosmetic },
+  { icon: Sparkles, title: "Teeth Whitening", desc: "In-clinic Zoom whitening — 6 shades brighter in 45 minutes.", color: "#f5b301", image: svcWhitening },
+  { icon: Shield, title: "Dental Implants", desc: "Titanium and zirconia implants placed with 3D-guided precision.", color: "#22c7f2", image: svcImplants },
+  { icon: Zap, title: "Invisalign & Ortho", desc: "Clear aligner therapy for adults and teens with iTero scans.", color: "#8b5cf6", image: svcInvisalign },
+  { icon: Heart, title: "General Dentistry", desc: "Comprehensive check-ups, hygiene and fillings for the whole family.", color: "#ef4444", image: svcGeneral },
+  { icon: Award, title: "Porcelain Veneers", desc: "Ultra-thin hand-crafted veneers matched to your facial harmony.", color: "#ec4899", image: svcVeneers },
+  { icon: Sparkles, title: "Smile Makeover", desc: "Full mouth reconstruction combining multiple disciplines.", color: "#10b981", image: svcMakeover },
+  { icon: Shield, title: "Root Canal Therapy", desc: "Painless microscopic endodontics with same-day crowns.", color: "#f97316", image: svcRootCanal },
 ];
 
 function Services() {
@@ -382,22 +391,25 @@ function Services() {
           <CarouselContent className="-ml-3">
             {services.map((s, i) => (
               <CarouselItem key={s.title} className="pl-3 basis-full sm:basis-1/2 lg:basis-1/4">
-                <div className="group card-luxe p-4 hover:-translate-y-2 hover:shadow-luxe cursor-pointer relative overflow-hidden h-full">
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(135deg, rgba(15,111,255,0.06), rgba(34,199,242,0.08))" }} />
-                  <div className="relative">
+                <div className="group card-luxe hover:-translate-y-2 hover:shadow-luxe cursor-pointer relative overflow-hidden h-full flex flex-col">
+                  <div className="relative w-full h-36 overflow-hidden">
+                    <img src={s.image} alt={s.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" width={800} height={600} loading="lazy" />
+                    <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, transparent 40%, ${s.color}22)` }} />
                     <div
-                      className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 transition-all duration-500 group-hover:scale-110"
-                      style={{ background: `${s.color}1f`, boxShadow: `0 10px 24px -12px ${s.color}80` }}
+                      className="absolute bottom-3 left-3 w-9 h-9 rounded-xl flex items-center justify-center backdrop-blur-md transition-all duration-500 group-hover:scale-110"
+                      style={{ background: `${s.color}e6`, boxShadow: `0 10px 24px -12px ${s.color}` }}
                     >
-                      <s.icon size={16} style={{ color: s.color }} />
+                      <s.icon size={16} className="text-white" />
                     </div>
+                  </div>
+                  <div className="relative p-4 flex-1">
                     <h3 className="font-display text-sm font-medium mb-1.5">{s.title}</h3>
                     <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
                     <div className="mt-3 flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-2 group-hover:translate-x-0">
                       Learn more <ArrowUpRight size={12} />
                     </div>
                   </div>
-                  {i === 0 && <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full opacity-30" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.5), transparent 70%)" }} />}
+                  {i === 0 && <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full opacity-30 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.5), transparent 70%)" }} />}
                 </div>
               </CarouselItem>
             ))}
