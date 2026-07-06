@@ -81,7 +81,7 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-5 lg:px-20">
+      <div className="mx-auto max-w-7xl px-5 lg:px-32">
         <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "h-14" : "h-16"}`}>
           <a href="#home" className="flex items-center gap-2 group">
             <div
@@ -159,12 +159,12 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
 /* ─────────────  HERO  ───────────── */
 function Hero() {
   return (
-    <section id="home" className="relative h-screen min-h-[640px] flex items-center pt-12 lg:pt-14 bg-hero overflow-hidden">
+    <section id="home" className="relative h-screen min-h-[640px] flex items-center pt-6 lg:pt-8 bg-hero overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-60 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
       <div className="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full animate-blob" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.35), transparent 70%)" }} />
       <div className="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full animate-blob" style={{ background: "radial-gradient(circle, rgba(15,111,255,0.25), transparent 70%)", animationDelay: "3s" }} />
 
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-20 grid lg:grid-cols-2 gap-8 items-center w-full">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-32 grid lg:grid-cols-2 gap-8 items-center w-full">
         <div className="animate-fade-up">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-[11px] font-medium mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
@@ -248,7 +248,7 @@ function About() {
   return (
     <section id="about" className="relative lg:h-screen py-16 lg:py-0 lg:pt-20 flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-mesh opacity-70" />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-20 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center w-full">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-32 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center w-full">
         <div className="relative">
           <div className="relative rounded-[1.75rem] overflow-hidden shadow-[0_30px_80px_-30px_rgba(15,32,60,0.35)]">
             <img src={doctorImg} alt="Dr. Elena Marchetti, lead cosmetic dentist" className="w-full h-[380px] lg:h-[460px] object-cover" width={800} height={1000} loading="lazy" />
@@ -325,7 +325,7 @@ function Services() {
   return (
     <section id="services" className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-dots opacity-50" />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-20 w-full">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-32 w-full">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8">
           <div className="max-w-2xl">
             <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">What we do</span>
@@ -372,7 +372,7 @@ function BeforeAfterSection() {
   return (
     <section className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex flex-col justify-center overflow-hidden">
       <div className="absolute inset-0 bg-mesh opacity-60" />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-20 w-full">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-32 w-full">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">Real transformations</span>
           <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
@@ -383,7 +383,7 @@ function BeforeAfterSection() {
       </div>
 
       <div className="relative overflow-x-auto pb-4 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <div className="flex gap-5 px-5 lg:px-[max(5rem,calc((100vw-1280px)/2+5rem))] snap-x snap-mandatory">
+        <div className="flex gap-5 px-5 lg:px-[max(8rem,calc((100vw-1280px)/2+8rem))] snap-x snap-mandatory">
           {transformations.map((t) => (
             <div key={t.title} className="snap-center flex-shrink-0 w-[260px] sm:w-[320px] lg:w-[360px]">
               <div className="relative h-[360px] lg:h-[420px] rounded-[1.75rem] overflow-hidden card-luxe p-1.5">
@@ -409,7 +409,7 @@ function Gallery() {
   return (
     <section id="gallery" className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]" />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-20 w-full">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-32 w-full">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3 mb-6">
           <div>
             <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">The Clinic</span>
@@ -460,7 +460,7 @@ function Testimonials() {
       <div className="absolute inset-0 bg-mesh opacity-60" />
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full" style={{ background: "radial-gradient(circle, rgba(15,111,255,0.15), transparent 70%)", filter: "blur(40px)" }} />
 
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-20 w-full">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-32 w-full">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">Loved by patients</span>
           <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
@@ -494,7 +494,7 @@ function Testimonials() {
 function CTA() {
   return (
     <section id="contact" className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex items-center overflow-hidden">
-      <div className="relative mx-auto max-w-6xl px-5 lg:px-20 w-full">
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-32 w-full">
         <div className="relative rounded-[2rem] overflow-hidden p-8 sm:p-10 lg:p-14 text-center" style={{ background: "var(--gradient-cta)" }}>
           <div className="absolute inset-0 bg-grid opacity-20" />
           <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/20 blur-3xl animate-blob" />
@@ -529,7 +529,7 @@ function CTA() {
 function Footer() {
   return (
     <footer className="relative border-t border-border pt-16 pb-8">
-      <div className="mx-auto max-w-7xl px-5 lg:px-20 grid md:grid-cols-4 gap-10">
+      <div className="mx-auto max-w-7xl px-5 lg:px-32 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-1">
           <a href="#home" className="flex items-center gap-2.5">
             <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "var(--gradient-primary)" }}>
@@ -578,7 +578,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="mt-14 pt-6 border-t border-border mx-auto max-w-7xl px-5 lg:px-20 flex flex-col sm:flex-row justify-between gap-3 text-xs text-muted-foreground">
+      <div className="mt-14 pt-6 border-t border-border mx-auto max-w-7xl px-5 lg:px-32 flex flex-col sm:flex-row justify-between gap-3 text-xs text-muted-foreground">
         <div>© {new Date().getFullYear()} Prestige Dental Clinic. All rights reserved.</div>
         <div className="flex gap-5"><a href="#" className="hover:text-primary">Privacy</a><a href="#" className="hover:text-primary">Terms</a><a href="#" className="hover:text-primary">Accessibility</a></div>
       </div>
