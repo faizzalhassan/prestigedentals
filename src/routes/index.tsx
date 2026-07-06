@@ -159,7 +159,7 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
 /* ─────────────  HERO  ───────────── */
 function Hero() {
   return (
-    <section id="home" className="relative h-screen min-h-[640px] flex items-center pt-20 bg-hero overflow-hidden">
+    <section id="home" className="relative h-screen min-h-[640px] flex items-center pt-12 lg:pt-14 bg-hero overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-60 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
       <div className="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full animate-blob" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.35), transparent 70%)" }} />
       <div className="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full animate-blob" style={{ background: "radial-gradient(circle, rgba(15,111,255,0.25), transparent 70%)", animationDelay: "3s" }} />
