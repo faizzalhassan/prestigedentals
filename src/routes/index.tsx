@@ -63,6 +63,13 @@ function Home() {
     return () => window.removeEventListener("scroll", on);
   }, []);
 
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = menuOpen ? "hidden" : prev || "";
+    return () => { document.body.style.overflow = prev; };
+  }, [menuOpen]);
+
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar scrolled={scrolled} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
