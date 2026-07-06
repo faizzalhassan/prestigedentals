@@ -392,7 +392,7 @@ function Services() {
             {services.map((s, i) => (
               <CarouselItem key={s.title} className="pl-3 basis-full sm:basis-1/2 lg:basis-1/4">
                 <div className="group card-luxe hover:-translate-y-2 hover:shadow-luxe cursor-pointer relative overflow-hidden h-full flex flex-col">
-                  <div className="relative w-full h-36 overflow-hidden">
+                  <div className="relative w-full h-56 overflow-hidden">
                     <img src={s.image} alt={s.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" width={800} height={600} loading="lazy" />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, transparent 40%, ${s.color}22)` }} />
                     <div
