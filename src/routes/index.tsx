@@ -383,8 +383,11 @@ function Services() {
             <div key={s.title} className="group card-luxe p-4 hover:-translate-y-2 hover:shadow-luxe cursor-pointer relative overflow-hidden">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(135deg, rgba(15,111,255,0.06), rgba(34,199,242,0.08))" }} />
               <div className="relative">
-                <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 transition-all duration-500 group-hover:scale-110" style={{ background: "var(--gradient-primary)", boxShadow: "0 10px 24px -8px rgba(15,111,255,0.5)" }}>
-                  <s.icon size={16} className="text-white" />
+                <div
+                  className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 transition-all duration-500 group-hover:scale-110"
+                  style={{ background: `${s.color}1f`, boxShadow: `0 10px 24px -12px ${s.color}80` }}
+                >
+                  <s.icon size={16} style={{ color: s.color }} />
                 </div>
                 <h3 className="font-display text-sm font-medium mb-1.5">{s.title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
