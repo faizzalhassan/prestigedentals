@@ -600,7 +600,7 @@ function FloatingActions() {
   return (
     <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
       <a href="https://wa.me/15550130198" target="_blank" rel="noopener" aria-label="WhatsApp" className="w-13 h-13 p-3.5 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition" style={{ background: "linear-gradient(135deg, #25d366, #128c7e)" }}>
-        <MessageCircle size={22} />
+        <WhatsAppIcon size={22} />
       </a>
       <a href="tel:+15550130198" aria-label="Call now" className="w-13 h-13 p-3.5 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition" style={{ background: "var(--gradient-primary)" }}>
         <Phone size={22} />
