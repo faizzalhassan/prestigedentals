@@ -404,7 +404,7 @@ function Services() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex items-center justify-center gap-3 mt-8">
+          <div className="flex items-center justify-end gap-3 mt-8">
             <CarouselPrevious className="static translate-y-0" />
             <CarouselNext className="static translate-y-0" />
           </div>
