@@ -388,7 +388,7 @@ function Services() {
         </div>
 
         <Carousel opts={{ align: "start", loop: true }} className="w-full">
-          <CarouselContent className="-ml-3">
+          <CarouselContent className="-ml-3 cursor-grab active:cursor-grabbing select-none">
             {services.map((s, i) => (
               <CarouselItem key={s.title} className="pl-3 basis-full sm:basis-1/2 lg:basis-1/4">
                 <div className="group card-luxe hover:-translate-y-2 hover:shadow-luxe cursor-pointer relative overflow-hidden h-full flex flex-col">
@@ -532,7 +532,7 @@ function Testimonials() {
         </div>
 
         <Carousel opts={{ align: "start", loop: true }} className="w-full">
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-4 cursor-grab active:cursor-grabbing select-none">
             {testimonials.map((t, i) => (
               <CarouselItem key={t.name} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/4">
                 <div className="card-luxe p-5 hover:-translate-y-2 hover:shadow-luxe transition duration-500 h-full" style={{ animationDelay: `${i * 100}ms` }}>
