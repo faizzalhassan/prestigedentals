@@ -153,7 +153,6 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
           </div>
 
           <div className="flex lg:hidden items-center gap-1">
-            <ThemeToggle />
             <button
               className="p-2 rounded-full hover:bg-accent-soft transition cursor-pointer"
               onClick={() => setMenuOpen(!menuOpen)}
