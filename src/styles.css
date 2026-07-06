@@ -91,6 +91,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    letter-spacing: -0.2px;
     -webkit-font-smoothing: antialiased;
   }
 
