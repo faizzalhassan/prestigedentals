@@ -217,60 +217,60 @@ function Hero() {
 /* ─────────────  ABOUT  ───────────── */
 function About() {
   return (
-    <section id="about" className="relative py-24 lg:min-h-screen lg:py-32 flex items-center overflow-hidden">
+    <section id="about" className="relative lg:h-screen py-16 lg:py-0 lg:pt-20 flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-mesh opacity-70" />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center w-full">
         <div className="relative">
-          <div className="relative rounded-[2rem] overflow-hidden shadow-[0_30px_80px_-30px_rgba(15,32,60,0.35)]">
-            <img src={doctorImg} alt="Dr. Elena Marchetti, lead cosmetic dentist" className="w-full h-[560px] object-cover" width={800} height={1000} loading="lazy" />
+          <div className="relative rounded-[1.75rem] overflow-hidden shadow-[0_30px_80px_-30px_rgba(15,32,60,0.35)]">
+            <img src={doctorImg} alt="Dr. Elena Marchetti, lead cosmetic dentist" className="w-full h-[380px] lg:h-[460px] object-cover" width={800} height={1000} loading="lazy" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 60%, rgba(15,32,60,0.25) 100%)" }} />
           </div>
-          <div className="absolute -bottom-6 -right-6 glass-strong rounded-2xl px-5 py-4 hidden sm:block">
-            <div className="flex items-center gap-3">
-              <Award className="text-primary" size={20} />
+          <div className="absolute -bottom-5 -right-5 glass-strong rounded-2xl px-4 py-3 hidden sm:block">
+            <div className="flex items-center gap-2.5">
+              <Award className="text-primary" size={18} />
               <div>
-                <div className="text-xs text-muted-foreground">Award-winning</div>
-                <div className="font-display font-semibold text-sm">Top Cosmetic Dentist 2024</div>
+                <div className="text-[10px] text-muted-foreground">Award-winning</div>
+                <div className="font-display font-semibold text-xs">Top Cosmetic Dentist 2024</div>
               </div>
             </div>
           </div>
-          <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full" style={{ background: "var(--gradient-primary)", filter: "blur(30px)", opacity: 0.4 }} />
+          <div className="absolute -top-4 -left-4 w-20 h-20 rounded-full" style={{ background: "var(--gradient-primary)", filter: "blur(30px)", opacity: 0.4 }} />
         </div>
 
         <div>
-          <span className="text-xs tracking-[0.3em] uppercase text-primary font-medium">Meet the Doctor</span>
-          <h2 className="mt-3 font-display text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">Meet the Doctor</span>
+          <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
             Dr. Elena Marchetti,<br /><span className="text-gradient">craftsman of smiles.</span>
           </h2>
-          <p className="mt-6 text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
             With 15+ years transforming smiles across three continents, Dr. Marchetti blends fine-art aesthetics with digital dentistry to deliver results that look natural and last a lifetime.
           </p>
 
-          <div className="mt-6 space-y-2.5">
+          <div className="mt-4 space-y-2">
             {["Diplomate, American Board of Cosmetic Dentistry",
               "Trained in digital smile design at NYU",
               "Invisalign Diamond Provider",
               "Guest lecturer, International Aesthetic Congress",
             ].map((c) => (
-              <div key={c} className="flex items-start gap-2.5 text-sm">
-                <div className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "var(--gradient-primary)" }}>
-                  <Check size={12} className="text-white" strokeWidth={3} />
+              <div key={c} className="flex items-start gap-2 text-xs lg:text-sm">
+                <div className="mt-0.5 w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "var(--gradient-primary)" }}>
+                  <Check size={10} className="text-white" strokeWidth={3} />
                 </div>
                 <span>{c}</span>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 grid grid-cols-3 gap-3">
+          <div className="mt-5 grid grid-cols-3 gap-2.5">
             {[
               { k: "15+", v: "Years experience", i: Award },
               { k: "5k+", v: "Patients treated", i: Users },
               { k: "98%", v: "Success rate", i: Heart },
             ].map((s) => (
-              <div key={s.v} className="card-luxe p-4 hover:-translate-y-1 hover:shadow-luxe">
-                <s.i className="text-primary mb-2" size={18} />
-                <div className="font-display text-2xl font-semibold text-gradient">{s.k}</div>
-                <div className="text-xs text-muted-foreground mt-0.5 leading-tight">{s.v}</div>
+              <div key={s.v} className="card-luxe p-3 hover:-translate-y-1 hover:shadow-luxe">
+                <s.i className="text-primary mb-1.5" size={16} />
+                <div className="font-display text-lg font-semibold text-gradient">{s.k}</div>
+                <div className="text-[10px] text-muted-foreground mt-0.5 leading-tight">{s.v}</div>
               </div>
             ))}
           </div>
