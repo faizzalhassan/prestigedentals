@@ -251,7 +251,7 @@ function About() {
       <div className="relative mx-auto max-w-7xl px-5 lg:px-[105px] grid lg:grid-cols-2 gap-10 lg:gap-12 items-center w-full">
         <div className="relative">
           <div className="relative rounded-[1.75rem] overflow-hidden shadow-[0_30px_80px_-30px_rgba(15,32,60,0.35)]">
-            <img src={doctorImg} alt="Dr. Elena Marchetti, lead cosmetic dentist" className="w-full h-[380px] lg:h-[460px] object-cover" width={800} height={1000} loading="lazy" />
+            <img src={doctorImg} alt="Dr. Marvi Qamar, lead cosmetic dentist" className="w-full h-[380px] lg:h-[460px] object-cover" width={800} height={1000} loading="lazy" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 60%, rgba(15,32,60,0.25) 100%)" }} />
           </div>
           <div className="absolute -bottom-5 -right-5 glass-strong rounded-2xl px-4 py-3 hidden sm:block">
@@ -269,10 +269,10 @@ function About() {
         <div>
           <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">Meet the Doctor</span>
           <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
-            Dr. Elena Marchetti,<br /><span className="text-gradient">craftsman of smiles.</span>
+            Dr. Marvi Qamar,<br /><span className="text-gradient">craftsman of smiles.</span>
           </h2>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-            With 15+ years transforming smiles across three continents, Dr. Marchetti blends fine-art aesthetics with digital dentistry to deliver results that look natural and last a lifetime.
+            With 15+ years transforming smiles across three continents, Dr. Qamar blends fine-art aesthetics with digital dentistry to deliver results that look natural and last a lifetime.
           </p>
 
           <div className="mt-4 space-y-2">
