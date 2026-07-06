@@ -445,23 +445,29 @@ function BeforeAfterSection() {
         </div>
       </div>
 
-      <div className="relative overflow-x-auto pb-4 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <div className="flex gap-5 px-5 lg:px-[max(105px,calc((100vw-1280px)/2+105px))] snap-x snap-mandatory">
-          {transformations.map((t) => (
-            <div key={t.title} className="snap-center flex-shrink-0 w-[260px] sm:w-[320px] lg:w-[360px]">
-              <div className="relative h-[360px] lg:h-[420px] rounded-[1.75rem] overflow-hidden card-luxe p-1.5">
-                <BeforeAfter before={t.before} after={t.after} alt={t.alt} />
-              </div>
-              <div className="mt-3 px-1 flex items-center justify-between">
-                <div>
-                  <h3 className="font-display font-medium text-sm">{t.title}</h3>
-                  <p className="text-xs text-muted-foreground">{t.sub}</p>
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-[105px] w-full">
+        <Carousel opts={{ align: "start", loop: true }} className="w-full">
+          <CarouselContent className="-ml-4 cursor-grab active:cursor-grabbing select-none">
+            {transformations.map((t) => (
+              <CarouselItem key={t.title} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
+                <div className="relative h-[360px] lg:h-[420px] rounded-[1.75rem] overflow-hidden card-luxe p-1.5">
+                  <BeforeAfter before={t.before} after={t.after} alt={t.alt} />
                 </div>
-                <Sparkles size={16} className="text-primary" />
-              </div>
-            </div>
-          ))}
-        </div>
+                <div className="mt-3 px-1 flex items-center justify-between">
+                  <div>
+                    <h3 className="font-display font-medium text-sm">{t.title}</h3>
+                    <p className="text-xs text-muted-foreground">{t.sub}</p>
+                  </div>
+                  <Sparkles size={16} className="text-primary" />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex items-center justify-end gap-3 mt-6">
+            <CarouselPrevious className="static translate-y-0" />
+            <CarouselNext className="static translate-y-0" />
+          </div>
+        </Carousel>
       </div>
     </section>
   );
