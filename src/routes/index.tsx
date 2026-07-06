@@ -464,29 +464,29 @@ function Testimonials() {
 /* ─────────────  CTA  ───────────── */
 function CTA() {
   return (
-    <section id="contact" className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
-        <div className="relative rounded-[2.5rem] overflow-hidden p-10 sm:p-14 lg:p-20 text-center" style={{ background: "var(--gradient-cta)" }}>
+    <section id="contact" className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex items-center overflow-hidden">
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8 w-full">
+        <div className="relative rounded-[2rem] overflow-hidden p-8 sm:p-10 lg:p-14 text-center" style={{ background: "var(--gradient-cta)" }}>
           <div className="absolute inset-0 bg-grid opacity-20" />
-          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/20 blur-3xl animate-blob" />
-          <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-white/10 blur-3xl animate-blob" style={{ animationDelay: "2s" }} />
+          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/20 blur-3xl animate-blob" />
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-white/10 blur-3xl animate-blob" style={{ animationDelay: "2s" }} />
 
           <div className="relative">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-medium mb-6">
-              <Sparkles size={13} /> Limited slots this month
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[11px] font-medium mb-4">
+              <Sparkles size={12} /> Limited slots this month
             </div>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.05] tracking-tight max-w-3xl mx-auto">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-5xl text-white leading-[1.05] tracking-tight max-w-3xl mx-auto">
               Your perfect smile <br /> starts today.
             </h2>
-            <p className="mt-5 text-white/85 max-w-lg mx-auto">
+            <p className="mt-3 text-sm text-white/85 max-w-lg mx-auto">
               Book a complimentary consultation. Meet the doctor, tour the clinic, and preview your new smile — no obligation.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <a href="tel:+15550130198" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-primary font-medium transition hover:-translate-y-0.5 shadow-xl">
-                <Calendar size={18} /> Book your appointment
+            <div className="mt-6 flex flex-wrap gap-2.5 justify-center">
+              <a href="tel:+15550130198" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-primary text-sm font-medium transition hover:-translate-y-0.5 shadow-xl">
+                <Calendar size={16} /> Book your appointment
               </a>
-              <a href="tel:+15550130198" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/15 backdrop-blur-md text-white font-medium border border-white/30 hover:bg-white/25 transition">
-                <Phone size={18} /> Call (555) 013-0198
+              <a href="tel:+15550130198" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-md text-white text-sm font-medium border border-white/30 hover:bg-white/25 transition">
+                <Phone size={16} /> Call (555) 013-0198
               </a>
             </div>
           </div>
