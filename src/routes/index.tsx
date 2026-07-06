@@ -74,52 +74,81 @@ function Home() {
 /* ─────────────  NAV  ───────────── */
 function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOpen: boolean; setMenuOpen: (v: boolean) => void }) {
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}>
-      <div className={`mx-auto max-w-7xl px-5 lg:px-8 transition-all duration-500 ${scrolled ? "glass-strong rounded-full" : ""}`} style={scrolled ? { maxWidth: "1120px" } : {}}>
-        <div className={`flex items-center justify-between ${scrolled ? "py-2 px-4" : ""}`}>
-          <a href="#home" className="flex items-center gap-2.5 group">
-            <div className="relative w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "var(--gradient-primary)", boxShadow: "0 8px 20px -6px rgba(15,111,255,0.5)" }}>
-              <Sparkles className="w-4.5 h-4.5 text-white" size={18} strokeWidth={2.5} />
+    <header
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/85 backdrop-blur-xl border-b border-border shadow-[0_1px_0_rgba(15,32,60,0.04)]"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "h-14" : "h-16"}`}>
+          <a href="#home" className="flex items-center gap-2 group">
+            <div
+              className="relative w-8 h-8 rounded-lg flex items-center justify-center"
+              style={{ background: "var(--gradient-primary)", boxShadow: "0 6px 16px -6px rgba(15,111,255,0.5)" }}
+            >
+              <Sparkles className="text-white" size={16} strokeWidth={2.5} />
             </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-display font-semibold text-[15px] tracking-tight">Prestige</span>
-              <span className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase">Dental Clinic</span>
-            </div>
+            <span className="font-display font-semibold text-[15px] tracking-tight">Prestige</span>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-7 absolute left-1/2 -translate-x-1/2">
             {nav.map((n) => (
-              <a key={n.href} href={n.href} className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition rounded-full hover:bg-accent-soft">
+              <a
+                key={n.href}
+                href={n.href}
+                className="text-[13px] font-medium text-foreground/70 hover:text-primary transition-colors"
+              >
                 {n.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+15550130198" className="text-sm font-medium text-foreground/70 hover:text-primary transition flex items-center gap-1.5">
-              <Phone size={14} /> (555) 013-0198
-            </a>
-            <a href="#contact" className="btn-primary btn-primary-hover text-sm">
-              <Calendar size={16} /> Book Appointment
+          <div className="hidden lg:flex items-center gap-2">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-[13px] font-medium text-white transition hover:-translate-y-0.5"
+              style={{ background: "var(--gradient-primary)", boxShadow: "0 8px 20px -8px rgba(15,111,255,0.55)" }}
+            >
+              <Calendar size={14} /> Book
             </a>
           </div>
 
-          <button className="lg:hidden p-2 rounded-full glass" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+          <button
+            className="lg:hidden p-2 rounded-full hover:bg-accent-soft transition"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+          >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      <div className={`lg:hidden fixed inset-x-4 top-20 rounded-3xl glass-strong overflow-hidden transition-all duration-500 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"}`}>
-        <div className="p-6 flex flex-col gap-1">
+      <div
+        className={`lg:hidden fixed inset-x-4 top-16 rounded-2xl bg-white/95 backdrop-blur-xl border border-border shadow-luxe overflow-hidden transition-all duration-300 ${
+          menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+        }`}
+      >
+        <div className="p-4 flex flex-col gap-0.5">
           {nav.map((n) => (
-            <a key={n.href} href={n.href} onClick={() => setMenuOpen(false)} className="px-4 py-3 rounded-2xl hover:bg-accent-soft font-medium">
+            <a
+              key={n.href}
+              href={n.href}
+              onClick={() => setMenuOpen(false)}
+              className="px-3 py-2.5 rounded-lg hover:bg-accent-soft text-sm font-medium"
+            >
               {n.label}
             </a>
           ))}
-          <a href="#contact" onClick={() => setMenuOpen(false)} className="btn-primary btn-primary-hover justify-center mt-3">
-            <Calendar size={16} /> Book Appointment
+          <a
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+            className="mt-2 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-sm font-medium text-white"
+            style={{ background: "var(--gradient-primary)" }}
+          >
+            <Calendar size={14} /> Book Appointment
           </a>
         </div>
       </div>
