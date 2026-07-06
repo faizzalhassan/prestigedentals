@@ -524,7 +524,7 @@ function Testimonials() {
         <Carousel opts={{ align: "start", loop: true }} className="w-full">
           <CarouselContent className="-ml-4">
             {testimonials.map((t, i) => (
-              <CarouselItem key={t.name} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={t.name} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/4">
                 <div className="card-luxe p-5 hover:-translate-y-2 hover:shadow-luxe transition duration-500 h-full" style={{ animationDelay: `${i * 100}ms` }}>
                   <div className="flex gap-0.5 text-primary mb-3">
                     {[...Array(5)].map((_, k) => <Star key={k} size={13} fill="currentColor" />)}
