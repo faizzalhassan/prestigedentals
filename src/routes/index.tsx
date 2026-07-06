@@ -129,13 +129,14 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
           <div className="flex lg:hidden items-center gap-1">
             <ThemeToggle />
 
-          <button
-            className="lg:hidden p-2 rounded-full hover:bg-accent-soft transition"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
-          >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+            <button
+              className="p-2 rounded-full hover:bg-accent-soft transition"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Menu"
+            >
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </div>
 
