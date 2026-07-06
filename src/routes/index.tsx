@@ -519,23 +519,29 @@ function Testimonials() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4">
-          {testimonials.map((t, i) => (
-            <div key={t.name} className="card-luxe p-5 hover:-translate-y-2 hover:shadow-luxe transition duration-500" style={{ animationDelay: `${i * 100}ms` }}>
-              <div className="flex gap-0.5 text-primary mb-3">
-                {[...Array(5)].map((_, k) => <Star key={k} size={13} fill="currentColor" />)}
-              </div>
-              <p className="text-foreground/85 leading-relaxed text-[13px]">"{t.quote}"</p>
-              <div className="mt-4 flex items-center gap-2.5 pt-4 border-t border-border">
-                <img src={t.img} alt={t.name} className="w-9 h-9 rounded-full object-cover" width={64} height={64} loading="lazy" />
-                <div>
-                  <div className="font-medium text-xs">{t.name}</div>
-                  <div className="text-[11px] text-muted-foreground">{t.treat}</div>
+        <Carousel opts={{ align: "start", loop: true }} className="w-full">
+          <CarouselContent className="-ml-4">
+            {testimonials.map((t, i) => (
+              <CarouselItem key={t.name} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                <div className="card-luxe p-5 hover:-translate-y-2 hover:shadow-luxe transition duration-500 h-full" style={{ animationDelay: `${i * 100}ms` }}>
+                  <div className="flex gap-0.5 text-primary mb-3">
+                    {[...Array(5)].map((_, k) => <Star key={k} size={13} fill="currentColor" />)}
+                  </div>
+                  <p className="text-foreground/85 leading-relaxed text-[13px]">"{t.quote}"</p>
+                  <div className="mt-4 flex items-center gap-2.5 pt-4 border-t border-border">
+                    <img src={t.img} alt={t.name} className="w-9 h-9 rounded-full object-cover" width={64} height={64} loading="lazy" />
+                    <div>
+                      <div className="font-medium text-xs">{t.name}</div>
+                      <div className="text-[11px] text-muted-foreground">{t.treat}</div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden sm:flex -left-4" />
+          <CarouselNext className="hidden sm:flex -right-4" />
+        </Carousel>
       </div>
     </section>
   );
