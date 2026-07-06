@@ -351,14 +351,14 @@ function About() {
 
 /* ─────────────  SERVICES  ───────────── */
 const services = [
-  { icon: Smile, title: "Cosmetic Dentistry", desc: "Bespoke smile design using digital previews before treatment." },
-  { icon: Sparkles, title: "Teeth Whitening", desc: "In-clinic Zoom whitening — 6 shades brighter in 45 minutes." },
-  { icon: Shield, title: "Dental Implants", desc: "Titanium and zirconia implants placed with 3D-guided precision." },
-  { icon: Zap, title: "Invisalign & Ortho", desc: "Clear aligner therapy for adults and teens with iTero scans." },
-  { icon: Heart, title: "General Dentistry", desc: "Comprehensive check-ups, hygiene and fillings for the whole family." },
-  { icon: Award, title: "Porcelain Veneers", desc: "Ultra-thin hand-crafted veneers matched to your facial harmony." },
-  { icon: Sparkles, title: "Smile Makeover", desc: "Full mouth reconstruction combining multiple disciplines." },
-  { icon: Shield, title: "Root Canal Therapy", desc: "Painless microscopic endodontics with same-day crowns." },
+  { icon: Smile, title: "Cosmetic Dentistry", desc: "Bespoke smile design using digital previews before treatment.", color: "#0f6fff" },
+  { icon: Sparkles, title: "Teeth Whitening", desc: "In-clinic Zoom whitening — 6 shades brighter in 45 minutes.", color: "#f5b301" },
+  { icon: Shield, title: "Dental Implants", desc: "Titanium and zirconia implants placed with 3D-guided precision.", color: "#22c7f2" },
+  { icon: Zap, title: "Invisalign & Ortho", desc: "Clear aligner therapy for adults and teens with iTero scans.", color: "#8b5cf6" },
+  { icon: Heart, title: "General Dentistry", desc: "Comprehensive check-ups, hygiene and fillings for the whole family.", color: "#ef4444" },
+  { icon: Award, title: "Porcelain Veneers", desc: "Ultra-thin hand-crafted veneers matched to your facial harmony.", color: "#ec4899" },
+  { icon: Sparkles, title: "Smile Makeover", desc: "Full mouth reconstruction combining multiple disciplines.", color: "#10b981" },
+  { icon: Shield, title: "Root Canal Therapy", desc: "Painless microscopic endodontics with same-day crowns.", color: "#f97316" },
 ];
 
 function Services() {
