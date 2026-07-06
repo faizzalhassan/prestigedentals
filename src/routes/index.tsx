@@ -374,7 +374,7 @@ function Services() {
 const transformations = [
   { before: smile1b, after: smile1, alt: "Veneers smile transformation", title: "Porcelain Veneers", sub: "12 units · 2 visits" },
   { before: smile2b, after: smile2, alt: "Whitening transformation", title: "Whitening + Bonding", sub: "1 session · 45 min" },
-  { before: smile3b, after: smile3, alt: "Invisalign transformation", title: "Invisalign", sub: "9 months treatment" },
+  { before: smileBracesB, after: smileBraces, alt: "Braces transformation", title: "Braces", sub: "18 months treatment" },
 ];
 
 function BeforeAfterSection() {
