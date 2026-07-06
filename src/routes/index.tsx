@@ -64,9 +64,27 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = menuOpen ? "hidden" : prev || "";
-    return () => { document.body.style.overflow = prev; };
+    const html = document.documentElement;
+    const body = document.body;
+    if (menuOpen) {
+      const y = window.scrollY;
+      body.dataset.scrollY = String(y);
+      html.style.overflow = "hidden";
+      body.style.overflow = "hidden";
+      body.style.position = "fixed";
+      body.style.top = `-${y}px`;
+      body.style.left = "0";
+      body.style.right = "0";
+    } else {
+      const y = parseInt(body.dataset.scrollY || "0", 10);
+      html.style.overflow = "";
+      body.style.overflow = "";
+      body.style.position = "";
+      body.style.top = "";
+      body.style.left = "";
+      body.style.right = "";
+      if (y) window.scrollTo(0, y);
+    }
   }, [menuOpen]);
 
 
