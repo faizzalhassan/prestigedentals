@@ -31,6 +31,7 @@ import p1 from "@/assets/patient-1.jpg";
 import p2 from "@/assets/patient-2.jpg";
 import p3 from "@/assets/patient-3.jpg";
 import { BeforeAfter } from "@/components/BeforeAfter";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -115,6 +116,7 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
           </nav>
 
           <div className="hidden lg:flex items-center gap-2">
+            <ThemeToggle />
             <a
               href="#contact"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-[13px] font-medium text-white transition hover:-translate-y-0.5"
@@ -124,13 +126,17 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
             </a>
           </div>
 
-          <button
-            className="lg:hidden p-2 rounded-full hover:bg-accent-soft transition"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Menu"
-          >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex lg:hidden items-center gap-1">
+            <ThemeToggle />
+
+            <button
+              className="p-2 rounded-full hover:bg-accent-soft transition"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Menu"
+            >
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </div>
 
