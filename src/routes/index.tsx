@@ -130,86 +130,82 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
 /* ─────────────  HERO  ───────────── */
 function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-28 pb-16 lg:pt-24 lg:pb-0 bg-hero overflow-hidden">
-      {/* decorative */}
+    <section id="home" className="relative h-screen min-h-[640px] flex items-center pt-20 bg-hero overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-60 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
-      <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full animate-blob" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.35), transparent 70%)" }} />
-      <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full animate-blob" style={{ background: "radial-gradient(circle, rgba(15,111,255,0.25), transparent 70%)", animationDelay: "3s" }} />
+      <div className="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full animate-blob" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.35), transparent 70%)" }} />
+      <div className="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full animate-blob" style={{ background: "radial-gradient(circle, rgba(15,111,255,0.25), transparent 70%)", animationDelay: "3s" }} />
 
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
-        {/* Left */}
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-8 items-center w-full">
         <div className="animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-xs font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass text-[11px] font-medium mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
             Accepting new patients · Same-week appointments
           </div>
-          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.03em] font-medium">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-[-0.03em] font-medium">
             Premium dental care <br />
             <span className="text-gradient">designed around</span> <br />
             your smile.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-lg leading-relaxed">
+          <p className="mt-4 text-sm lg:text-base text-muted-foreground max-w-md leading-relaxed">
             A serene, technology-first clinic where craftsmanship meets comfort. From routine care to complete smile makeovers — done with precision.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a href="#contact" className="btn-primary btn-primary-hover">
-              <Calendar size={18} /> Book Appointment <ArrowRight size={16} />
+          <div className="mt-5 flex flex-wrap items-center gap-2.5">
+            <a href="#contact" className="btn-primary btn-primary-hover text-sm">
+              <Calendar size={16} /> Book Appointment <ArrowRight size={14} />
             </a>
-            <a href="#services" className="btn-ghost hover:bg-white">
+            <a href="#services" className="btn-ghost hover:bg-white text-sm">
               View services
             </a>
           </div>
 
-          <div className="mt-12 grid grid-cols-3 gap-4 max-w-md">
+          <div className="mt-7 grid grid-cols-3 gap-3 max-w-sm">
             {[
               { k: "15+", v: "Years" },
               { k: "5k+", v: "Patients" },
               { k: "4.9★", v: "Google" },
             ].map((s) => (
               <div key={s.v}>
-                <div className="font-display text-2xl font-semibold text-gradient">{s.k}</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider mt-1">{s.v}</div>
+                <div className="font-display text-xl font-semibold text-gradient">{s.k}</div>
+                <div className="text-[10px] text-muted-foreground uppercase tracking-wider mt-0.5">{s.v}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right */}
-        <div className="relative h-[520px] lg:h-[620px]">
+        <div className="relative h-[340px] lg:h-[460px] hidden md:block">
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="absolute w-[420px] h-[420px] rounded-full" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.35), transparent 70%)", filter: "blur(40px)" }} />
-            <img src={heroTooth} alt="Premium 3D tooth illustration" className="relative w-[440px] h-[440px] object-contain animate-float-slow drop-shadow-2xl" width={440} height={440} />
+            <div className="absolute w-[320px] h-[320px] rounded-full" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.35), transparent 70%)", filter: "blur(40px)" }} />
+            <img src={heroTooth} alt="Premium 3D tooth illustration" className="relative w-[340px] h-[340px] lg:w-[400px] lg:h-[400px] object-contain animate-float-slow drop-shadow-2xl" width={400} height={400} />
           </div>
 
-          {/* Floating cards */}
-          <div className="absolute top-8 left-0 glass-strong rounded-2xl p-4 animate-float-med" style={{ animationDelay: "0.5s" }}>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white" style={{ background: "var(--gradient-primary)" }}>
-                <Star size={18} fill="white" />
+          <div className="absolute top-4 left-0 glass-strong rounded-2xl p-3 animate-float-med" style={{ animationDelay: "0.5s" }}>
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white" style={{ background: "var(--gradient-primary)" }}>
+                <Star size={14} fill="white" />
               </div>
               <div>
-                <div className="text-xs text-muted-foreground">Google Rating</div>
-                <div className="font-display font-semibold text-lg leading-none mt-0.5">4.9 / 5.0</div>
+                <div className="text-[10px] text-muted-foreground">Google Rating</div>
+                <div className="font-display font-semibold text-sm leading-none mt-0.5">4.9 / 5.0</div>
               </div>
             </div>
           </div>
 
-          <div className="absolute bottom-20 right-0 glass-strong rounded-2xl p-4 animate-float-med" style={{ animationDelay: "1.5s" }}>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-primary bg-accent-soft">
-                <Users size={18} />
+          <div className="absolute bottom-8 right-0 glass-strong rounded-2xl p-3 animate-float-med" style={{ animationDelay: "1.5s" }}>
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center text-primary bg-accent-soft">
+                <Users size={14} />
               </div>
               <div>
-                <div className="text-xs text-muted-foreground">Happy patients</div>
-                <div className="font-display font-semibold text-lg leading-none mt-0.5">5,000+</div>
+                <div className="text-[10px] text-muted-foreground">Happy patients</div>
+                <div className="font-display font-semibold text-sm leading-none mt-0.5">5,000+</div>
               </div>
             </div>
           </div>
 
-          <div className="absolute top-1/2 -right-4 glass-strong rounded-2xl p-3 animate-float-med" style={{ animationDelay: "1s" }}>
-            <div className="flex items-center gap-2">
-              <Shield size={16} className="text-primary" />
-              <span className="text-xs font-medium">ADA Certified</span>
+          <div className="absolute top-1/2 -right-2 glass-strong rounded-xl p-2.5 animate-float-med" style={{ animationDelay: "1s" }}>
+            <div className="flex items-center gap-1.5">
+              <Shield size={13} className="text-primary" />
+              <span className="text-[11px] font-medium">ADA Certified</span>
             </div>
           </div>
         </div>
@@ -221,60 +217,60 @@ function Hero() {
 /* ─────────────  ABOUT  ───────────── */
 function About() {
   return (
-    <section id="about" className="relative py-24 lg:min-h-screen lg:py-32 flex items-center overflow-hidden">
+    <section id="about" className="relative lg:h-screen py-16 lg:py-0 lg:pt-20 flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-mesh opacity-70" />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center w-full">
         <div className="relative">
-          <div className="relative rounded-[2rem] overflow-hidden shadow-[0_30px_80px_-30px_rgba(15,32,60,0.35)]">
-            <img src={doctorImg} alt="Dr. Elena Marchetti, lead cosmetic dentist" className="w-full h-[560px] object-cover" width={800} height={1000} loading="lazy" />
+          <div className="relative rounded-[1.75rem] overflow-hidden shadow-[0_30px_80px_-30px_rgba(15,32,60,0.35)]">
+            <img src={doctorImg} alt="Dr. Elena Marchetti, lead cosmetic dentist" className="w-full h-[380px] lg:h-[460px] object-cover" width={800} height={1000} loading="lazy" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 60%, rgba(15,32,60,0.25) 100%)" }} />
           </div>
-          <div className="absolute -bottom-6 -right-6 glass-strong rounded-2xl px-5 py-4 hidden sm:block">
-            <div className="flex items-center gap-3">
-              <Award className="text-primary" size={20} />
+          <div className="absolute -bottom-5 -right-5 glass-strong rounded-2xl px-4 py-3 hidden sm:block">
+            <div className="flex items-center gap-2.5">
+              <Award className="text-primary" size={18} />
               <div>
-                <div className="text-xs text-muted-foreground">Award-winning</div>
-                <div className="font-display font-semibold text-sm">Top Cosmetic Dentist 2024</div>
+                <div className="text-[10px] text-muted-foreground">Award-winning</div>
+                <div className="font-display font-semibold text-xs">Top Cosmetic Dentist 2024</div>
               </div>
             </div>
           </div>
-          <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full" style={{ background: "var(--gradient-primary)", filter: "blur(30px)", opacity: 0.4 }} />
+          <div className="absolute -top-4 -left-4 w-20 h-20 rounded-full" style={{ background: "var(--gradient-primary)", filter: "blur(30px)", opacity: 0.4 }} />
         </div>
 
         <div>
-          <span className="text-xs tracking-[0.3em] uppercase text-primary font-medium">Meet the Doctor</span>
-          <h2 className="mt-3 font-display text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">Meet the Doctor</span>
+          <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
             Dr. Elena Marchetti,<br /><span className="text-gradient">craftsman of smiles.</span>
           </h2>
-          <p className="mt-6 text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
             With 15+ years transforming smiles across three continents, Dr. Marchetti blends fine-art aesthetics with digital dentistry to deliver results that look natural and last a lifetime.
           </p>
 
-          <div className="mt-6 space-y-2.5">
+          <div className="mt-4 space-y-2">
             {["Diplomate, American Board of Cosmetic Dentistry",
               "Trained in digital smile design at NYU",
               "Invisalign Diamond Provider",
               "Guest lecturer, International Aesthetic Congress",
             ].map((c) => (
-              <div key={c} className="flex items-start gap-2.5 text-sm">
-                <div className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "var(--gradient-primary)" }}>
-                  <Check size={12} className="text-white" strokeWidth={3} />
+              <div key={c} className="flex items-start gap-2 text-xs lg:text-sm">
+                <div className="mt-0.5 w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "var(--gradient-primary)" }}>
+                  <Check size={10} className="text-white" strokeWidth={3} />
                 </div>
                 <span>{c}</span>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 grid grid-cols-3 gap-3">
+          <div className="mt-5 grid grid-cols-3 gap-2.5">
             {[
               { k: "15+", v: "Years experience", i: Award },
               { k: "5k+", v: "Patients treated", i: Users },
               { k: "98%", v: "Success rate", i: Heart },
             ].map((s) => (
-              <div key={s.v} className="card-luxe p-4 hover:-translate-y-1 hover:shadow-luxe">
-                <s.i className="text-primary mb-2" size={18} />
-                <div className="font-display text-2xl font-semibold text-gradient">{s.k}</div>
-                <div className="text-xs text-muted-foreground mt-0.5 leading-tight">{s.v}</div>
+              <div key={s.v} className="card-luxe p-3 hover:-translate-y-1 hover:shadow-luxe">
+                <s.i className="text-primary mb-1.5" size={16} />
+                <div className="font-display text-lg font-semibold text-gradient">{s.k}</div>
+                <div className="text-[10px] text-muted-foreground mt-0.5 leading-tight">{s.v}</div>
               </div>
             ))}
           </div>
@@ -298,36 +294,36 @@ const services = [
 
 function Services() {
   return (
-    <section id="services" className="relative py-24 lg:min-h-screen lg:py-28 flex items-center overflow-hidden">
+    <section id="services" className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-dots opacity-50" />
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 w-full">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-8">
           <div className="max-w-2xl">
-            <span className="text-xs tracking-[0.3em] uppercase text-primary font-medium">What we do</span>
-            <h2 className="mt-3 font-display text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">What we do</span>
+            <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
               A complete practice, <span className="text-gradient">under one roof.</span>
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-md">
+          <p className="text-sm text-muted-foreground max-w-md">
             Every treatment is planned digitally, executed by specialists, and delivered in a calm, private environment.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {services.map((s, i) => (
-            <div key={s.title} className="group card-luxe p-6 hover:-translate-y-2 hover:shadow-luxe cursor-pointer relative overflow-hidden">
+            <div key={s.title} className="group card-luxe p-4 hover:-translate-y-2 hover:shadow-luxe cursor-pointer relative overflow-hidden">
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(135deg, rgba(15,111,255,0.06), rgba(34,199,242,0.08))" }} />
               <div className="relative">
-                <div className="w-11 h-11 rounded-2xl flex items-center justify-center mb-5 transition-all duration-500 group-hover:scale-110" style={{ background: "var(--gradient-primary)", boxShadow: "0 10px 24px -8px rgba(15,111,255,0.5)" }}>
-                  <s.icon size={20} className="text-white" />
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 transition-all duration-500 group-hover:scale-110" style={{ background: "var(--gradient-primary)", boxShadow: "0 10px 24px -8px rgba(15,111,255,0.5)" }}>
+                  <s.icon size={16} className="text-white" />
                 </div>
-                <h3 className="font-display text-lg font-medium mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                <div className="mt-5 flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-2 group-hover:translate-x-0">
-                  Learn more <ArrowUpRight size={14} />
+                <h3 className="font-display text-sm font-medium mb-1.5">{s.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+                <div className="mt-3 flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-2 group-hover:translate-x-0">
+                  Learn more <ArrowUpRight size={12} />
                 </div>
               </div>
-              {i === 0 && <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full opacity-30" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.5), transparent 70%)" }} />}
+              {i === 0 && <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full opacity-30" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.5), transparent 70%)" }} />}
             </div>
           ))}
         </div>
@@ -345,31 +341,31 @@ const transformations = [
 
 function BeforeAfterSection() {
   return (
-    <section className="relative py-24 lg:py-28 overflow-hidden">
+    <section className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex flex-col justify-center overflow-hidden">
       <div className="absolute inset-0 bg-mesh opacity-60" />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-xs tracking-[0.3em] uppercase text-primary font-medium">Real transformations</span>
-          <h2 className="mt-3 font-display text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 w-full">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">Real transformations</span>
+          <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
             Drag to reveal <span className="text-gradient">the difference.</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">Every smile below was designed and delivered in our studio.</p>
+          <p className="mt-2 text-sm text-muted-foreground">Every smile below was designed and delivered in our studio.</p>
         </div>
       </div>
 
-      <div className="relative overflow-x-auto pb-6 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <div className="flex gap-6 px-5 lg:px-[max(2rem,calc((100vw-1280px)/2+2rem))] snap-x snap-mandatory">
+      <div className="relative overflow-x-auto pb-4 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-5 px-5 lg:px-[max(2rem,calc((100vw-1280px)/2+2rem))] snap-x snap-mandatory">
           {transformations.map((t) => (
-            <div key={t.title} className="snap-center flex-shrink-0 w-[300px] sm:w-[380px] lg:w-[420px]">
-              <div className="relative h-[480px] lg:h-[540px] rounded-[2rem] overflow-hidden card-luxe p-2">
+            <div key={t.title} className="snap-center flex-shrink-0 w-[260px] sm:w-[320px] lg:w-[360px]">
+              <div className="relative h-[360px] lg:h-[420px] rounded-[1.75rem] overflow-hidden card-luxe p-1.5">
                 <BeforeAfter before={t.before} after={t.after} alt={t.alt} />
               </div>
-              <div className="mt-4 px-2 flex items-center justify-between">
+              <div className="mt-3 px-1 flex items-center justify-between">
                 <div>
-                  <h3 className="font-display font-medium text-lg">{t.title}</h3>
-                  <p className="text-sm text-muted-foreground">{t.sub}</p>
+                  <h3 className="font-display font-medium text-sm">{t.title}</h3>
+                  <p className="text-xs text-muted-foreground">{t.sub}</p>
                 </div>
-                <Sparkles size={18} className="text-primary" />
+                <Sparkles size={16} className="text-primary" />
               </div>
             </div>
           ))}
@@ -382,20 +378,20 @@ function BeforeAfterSection() {
 /* ─────────────  GALLERY (Bento)  ───────────── */
 function Gallery() {
   return (
-    <section id="gallery" className="relative py-24 lg:min-h-screen lg:py-28 flex items-center overflow-hidden">
+    <section id="gallery" className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_75%)]" />
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 w-full">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3 mb-6">
           <div>
-            <span className="text-xs tracking-[0.3em] uppercase text-primary font-medium">The Clinic</span>
-            <h2 className="mt-3 font-display text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">The Clinic</span>
+            <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
               A space designed <br className="hidden sm:block" /><span className="text-gradient">to disarm anxiety.</span>
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-sm">Every corner considered — from the light temperature to the scent of the reception.</p>
+          <p className="text-sm text-muted-foreground max-w-sm">Every corner considered — from the light temperature to the scent of the reception.</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[160px] md:auto-rows-[180px]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[110px] md:auto-rows-[140px]">
           <GalleryCard src={galReception} alt="Marble reception with ambient lighting" label="Reception" className="col-span-2 row-span-2" />
           <GalleryCard src={galTreatment} alt="Modern white dental treatment room" label="Treatment Room" className="col-span-2 row-span-2" />
           <GalleryCard src={galLounge} alt="Boutique-style waiting lounge" label="Waiting Lounge" className="col-span-2 row-span-1" />
@@ -431,30 +427,30 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-24 lg:min-h-screen lg:py-28 flex items-center overflow-hidden">
+    <section id="testimonials" className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-mesh opacity-60" />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full" style={{ background: "radial-gradient(circle, rgba(15,111,255,0.15), transparent 70%)", filter: "blur(40px)" }} />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full" style={{ background: "radial-gradient(circle, rgba(15,111,255,0.15), transparent 70%)", filter: "blur(40px)" }} />
 
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8 w-full">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-xs tracking-[0.3em] uppercase text-primary font-medium">Loved by patients</span>
-          <h2 className="mt-3 font-display text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">Loved by patients</span>
+          <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
             824 verified <span className="text-gradient">5-star reviews.</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-4">
           {testimonials.map((t, i) => (
-            <div key={t.name} className="card-luxe p-7 hover:-translate-y-2 hover:shadow-luxe transition duration-500" style={{ animationDelay: `${i * 100}ms` }}>
-              <div className="flex gap-0.5 text-primary mb-4">
-                {[...Array(5)].map((_, k) => <Star key={k} size={16} fill="currentColor" />)}
+            <div key={t.name} className="card-luxe p-5 hover:-translate-y-2 hover:shadow-luxe transition duration-500" style={{ animationDelay: `${i * 100}ms` }}>
+              <div className="flex gap-0.5 text-primary mb-3">
+                {[...Array(5)].map((_, k) => <Star key={k} size={13} fill="currentColor" />)}
               </div>
-              <p className="text-foreground/85 leading-relaxed text-[15px]">"{t.quote}"</p>
-              <div className="mt-6 flex items-center gap-3 pt-5 border-t border-border">
-                <img src={t.img} alt={t.name} className="w-11 h-11 rounded-full object-cover" width={64} height={64} loading="lazy" />
+              <p className="text-foreground/85 leading-relaxed text-[13px]">"{t.quote}"</p>
+              <div className="mt-4 flex items-center gap-2.5 pt-4 border-t border-border">
+                <img src={t.img} alt={t.name} className="w-9 h-9 rounded-full object-cover" width={64} height={64} loading="lazy" />
                 <div>
-                  <div className="font-medium text-sm">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.treat}</div>
+                  <div className="font-medium text-xs">{t.name}</div>
+                  <div className="text-[11px] text-muted-foreground">{t.treat}</div>
                 </div>
               </div>
             </div>
@@ -468,29 +464,29 @@ function Testimonials() {
 /* ─────────────  CTA  ───────────── */
 function CTA() {
   return (
-    <section id="contact" className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="relative mx-auto max-w-6xl px-5 lg:px-8">
-        <div className="relative rounded-[2.5rem] overflow-hidden p-10 sm:p-14 lg:p-20 text-center" style={{ background: "var(--gradient-cta)" }}>
+    <section id="contact" className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex items-center overflow-hidden">
+      <div className="relative mx-auto max-w-6xl px-5 lg:px-8 w-full">
+        <div className="relative rounded-[2rem] overflow-hidden p-8 sm:p-10 lg:p-14 text-center" style={{ background: "var(--gradient-cta)" }}>
           <div className="absolute inset-0 bg-grid opacity-20" />
-          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/20 blur-3xl animate-blob" />
-          <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-white/10 blur-3xl animate-blob" style={{ animationDelay: "2s" }} />
+          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/20 blur-3xl animate-blob" />
+          <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-white/10 blur-3xl animate-blob" style={{ animationDelay: "2s" }} />
 
           <div className="relative">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-medium mb-6">
-              <Sparkles size={13} /> Limited slots this month
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[11px] font-medium mb-4">
+              <Sparkles size={12} /> Limited slots this month
             </div>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.05] tracking-tight max-w-3xl mx-auto">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-5xl text-white leading-[1.05] tracking-tight max-w-3xl mx-auto">
               Your perfect smile <br /> starts today.
             </h2>
-            <p className="mt-5 text-white/85 max-w-lg mx-auto">
+            <p className="mt-3 text-sm text-white/85 max-w-lg mx-auto">
               Book a complimentary consultation. Meet the doctor, tour the clinic, and preview your new smile — no obligation.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <a href="tel:+15550130198" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white text-primary font-medium transition hover:-translate-y-0.5 shadow-xl">
-                <Calendar size={18} /> Book your appointment
+            <div className="mt-6 flex flex-wrap gap-2.5 justify-center">
+              <a href="tel:+15550130198" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-primary text-sm font-medium transition hover:-translate-y-0.5 shadow-xl">
+                <Calendar size={16} /> Book your appointment
               </a>
-              <a href="tel:+15550130198" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/15 backdrop-blur-md text-white font-medium border border-white/30 hover:bg-white/25 transition">
-                <Phone size={18} /> Call (555) 013-0198
+              <a href="tel:+15550130198" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-md text-white text-sm font-medium border border-white/30 hover:bg-white/25 transition">
+                <Phone size={16} /> Call (555) 013-0198
               </a>
             </div>
           </div>
