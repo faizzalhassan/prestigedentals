@@ -380,27 +380,33 @@ function Services() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          {services.map((s, i) => (
-            <div key={s.title} className="group card-luxe p-4 hover:-translate-y-2 hover:shadow-luxe cursor-pointer relative overflow-hidden">
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(135deg, rgba(15,111,255,0.06), rgba(34,199,242,0.08))" }} />
-              <div className="relative">
-                <div
-                  className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 transition-all duration-500 group-hover:scale-110"
-                  style={{ background: `${s.color}1f`, boxShadow: `0 10px 24px -12px ${s.color}80` }}
-                >
-                  <s.icon size={16} style={{ color: s.color }} />
+        <Carousel opts={{ align: "start", loop: true }} className="w-full">
+          <CarouselContent className="-ml-3">
+            {services.map((s, i) => (
+              <CarouselItem key={s.title} className="pl-3 basis-full sm:basis-1/2 lg:basis-1/4">
+                <div className="group card-luxe p-4 hover:-translate-y-2 hover:shadow-luxe cursor-pointer relative overflow-hidden h-full">
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "linear-gradient(135deg, rgba(15,111,255,0.06), rgba(34,199,242,0.08))" }} />
+                  <div className="relative">
+                    <div
+                      className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 transition-all duration-500 group-hover:scale-110"
+                      style={{ background: `${s.color}1f`, boxShadow: `0 10px 24px -12px ${s.color}80` }}
+                    >
+                      <s.icon size={16} style={{ color: s.color }} />
+                    </div>
+                    <h3 className="font-display text-sm font-medium mb-1.5">{s.title}</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+                    <div className="mt-3 flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-2 group-hover:translate-x-0">
+                      Learn more <ArrowUpRight size={12} />
+                    </div>
+                  </div>
+                  {i === 0 && <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full opacity-30" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.5), transparent 70%)" }} />}
                 </div>
-                <h3 className="font-display text-sm font-medium mb-1.5">{s.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
-                <div className="mt-3 flex items-center gap-1 text-xs font-medium text-primary opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-x-2 group-hover:translate-x-0">
-                  Learn more <ArrowUpRight size={12} />
-                </div>
-              </div>
-              {i === 0 && <div className="absolute -top-10 -right-10 w-28 h-28 rounded-full opacity-30" style={{ background: "radial-gradient(circle, rgba(34,199,242,0.5), transparent 70%)" }} />}
-            </div>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden sm:flex -left-4" />
+          <CarouselNext className="hidden sm:flex -right-4" />
+        </Carousel>
       </div>
     </section>
   );
