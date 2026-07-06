@@ -341,31 +341,31 @@ const transformations = [
 
 function BeforeAfterSection() {
   return (
-    <section className="relative py-24 lg:py-28 overflow-hidden">
+    <section className="relative lg:h-screen py-16 lg:py-0 lg:pt-24 flex flex-col justify-center overflow-hidden">
       <div className="absolute inset-0 bg-mesh opacity-60" />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-xs tracking-[0.3em] uppercase text-primary font-medium">Real transformations</span>
-          <h2 className="mt-3 font-display text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 w-full">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <span className="text-[10px] tracking-[0.3em] uppercase text-primary font-medium">Real transformations</span>
+          <h2 className="mt-2 font-display text-2xl lg:text-4xl leading-[1.05] tracking-tight">
             Drag to reveal <span className="text-gradient">the difference.</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">Every smile below was designed and delivered in our studio.</p>
+          <p className="mt-2 text-sm text-muted-foreground">Every smile below was designed and delivered in our studio.</p>
         </div>
       </div>
 
-      <div className="relative overflow-x-auto pb-6 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <div className="flex gap-6 px-5 lg:px-[max(2rem,calc((100vw-1280px)/2+2rem))] snap-x snap-mandatory">
+      <div className="relative overflow-x-auto pb-4 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-5 px-5 lg:px-[max(2rem,calc((100vw-1280px)/2+2rem))] snap-x snap-mandatory">
           {transformations.map((t) => (
-            <div key={t.title} className="snap-center flex-shrink-0 w-[300px] sm:w-[380px] lg:w-[420px]">
-              <div className="relative h-[480px] lg:h-[540px] rounded-[2rem] overflow-hidden card-luxe p-2">
+            <div key={t.title} className="snap-center flex-shrink-0 w-[260px] sm:w-[320px] lg:w-[360px]">
+              <div className="relative h-[360px] lg:h-[420px] rounded-[1.75rem] overflow-hidden card-luxe p-1.5">
                 <BeforeAfter before={t.before} after={t.after} alt={t.alt} />
               </div>
-              <div className="mt-4 px-2 flex items-center justify-between">
+              <div className="mt-3 px-1 flex items-center justify-between">
                 <div>
-                  <h3 className="font-display font-medium text-lg">{t.title}</h3>
-                  <p className="text-sm text-muted-foreground">{t.sub}</p>
+                  <h3 className="font-display font-medium text-sm">{t.title}</h3>
+                  <p className="text-xs text-muted-foreground">{t.sub}</p>
                 </div>
-                <Sparkles size={18} className="text-primary" />
+                <Sparkles size={16} className="text-primary" />
               </div>
             </div>
           ))}
