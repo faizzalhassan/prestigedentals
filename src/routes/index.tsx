@@ -388,7 +388,7 @@ function Services() {
         </div>
 
         <Carousel opts={{ align: "start", loop: true }} className="w-full">
-          <CarouselContent className="-ml-3">
+          <CarouselContent className="-ml-3 cursor-grab active:cursor-grabbing select-none">
             {services.map((s, i) => (
               <CarouselItem key={s.title} className="pl-3 basis-full sm:basis-1/2 lg:basis-1/4">
                 <div className="group card-luxe hover:-translate-y-2 hover:shadow-luxe cursor-pointer relative overflow-hidden h-full flex flex-col">
