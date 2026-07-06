@@ -90,11 +90,12 @@ function Home() {
 
 /* ─────────────  NAV  ───────────── */
 function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOpen: boolean; setMenuOpen: (v: boolean) => void }) {
+  const expanded = scrolled || menuOpen;
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/85 backdrop-blur-xl border-b border-border shadow-[0_1px_0_rgba(15,32,60,0.04)]"
+        expanded
+          ? "bg-white/90 dark:bg-surface/90 backdrop-blur-xl border-b border-border shadow-[0_1px_0_rgba(15,32,60,0.04)]"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -135,63 +136,45 @@ function Navbar({ scrolled, menuOpen, setMenuOpen }: { scrolled: boolean; menuOp
 
           <div className="flex lg:hidden items-center gap-1">
             <ThemeToggle />
-
             <button
               className="p-2 rounded-full hover:bg-accent-soft transition cursor-pointer"
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Menu"
+              aria-expanded={menuOpen}
             >
               {menuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile side drawer */}
-      <div
-        className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
-        onClick={() => setMenuOpen(false)}
-      >
-        <div className="absolute inset-0 bg-foreground/30 backdrop-blur-sm" />
-      </div>
-      <aside
-        className={`lg:hidden fixed top-0 right-0 z-50 h-full w-[78%] max-w-xs bg-surface border-l border-border shadow-luxe transition-transform duration-300 ease-out ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex items-center justify-between px-5 h-16 border-b border-border">
-          <span className="font-display font-semibold text-[15px]">Menu</span>
-          <button
-            onClick={() => setMenuOpen(false)}
-            aria-label="Close menu"
-            className="p-2 rounded-full hover:bg-accent-soft transition cursor-pointer"
-          >
-            <X size={18} />
-          </button>
-        </div>
-        <div className="p-5 flex flex-col gap-1">
-          {nav.map((n) => (
+        {/* Mobile expanding panel */}
+        <div
+          className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-400 ease-out ${
+            menuOpen ? "max-h-[70vh] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="py-3 flex flex-col gap-0.5 border-t border-border">
+            {nav.map((n) => (
+              <a
+                key={n.href}
+                href={n.href}
+                onClick={() => setMenuOpen(false)}
+                className="px-3 py-2.5 rounded-lg hover:bg-accent-soft text-sm font-medium"
+              >
+                {n.label}
+              </a>
+            ))}
             <a
-              key={n.href}
-              href={n.href}
+              href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="px-3 py-3 rounded-lg hover:bg-accent-soft text-sm font-medium"
+              className="mt-2 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-sm font-medium text-white"
+              style={{ background: "var(--gradient-primary)" }}
             >
-              {n.label}
+              <Calendar size={14} /> Book Appointment
             </a>
-          ))}
-          <a
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
-            className="mt-4 inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-full text-sm font-medium text-white"
-            style={{ background: "var(--gradient-primary)" }}
-          >
-            <Calendar size={14} /> Book Appointment
-          </a>
+          </div>
         </div>
-      </aside>
+      </div>
     </header>
   );
 }
