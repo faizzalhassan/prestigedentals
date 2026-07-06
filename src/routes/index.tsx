@@ -570,11 +570,11 @@ function CTA() {
               Book a complimentary consultation. Meet the doctor, tour the clinic, and preview your new smile — no obligation.
             </p>
             <div className="mt-6 flex flex-wrap gap-2.5 justify-center">
-              <a href="tel:+15550130198" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-primary text-sm font-medium transition hover:-translate-y-0.5 shadow-xl">
+              <a href="tel:+923337514368" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-primary text-sm font-medium transition hover:-translate-y-0.5 shadow-xl">
                 <Calendar size={16} /> Book your appointment
               </a>
-              <a href="tel:+15550130198" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-md text-white text-sm font-medium border border-white/30 hover:bg-white/25 transition">
-                <Phone size={16} /> Call (555) 013-0198
+              <a href="tel:+923337514368" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-md text-white text-sm font-medium border border-white/30 hover:bg-white/25 transition">
+                <Phone size={16} /> Call 0333 7514368
               </a>
             </div>
           </div>
@@ -630,8 +630,8 @@ function Footer() {
         <div>
           <h4 className="font-display font-medium text-sm mb-4">Contact</h4>
           <ul className="space-y-2.5 text-sm text-muted-foreground">
-            <li className="flex items-start gap-2"><MapPin size={14} className="mt-0.5 flex-shrink-0" /> 128 Marina Blvd, Suite 400, San Francisco</li>
-            <li className="flex items-center gap-2"><Phone size={14} /> <a href="tel:+15550130198" className="hover:text-primary">(555) 013-0198</a></li>
+            <li className="flex items-start gap-2"><MapPin size={14} className="mt-0.5 flex-shrink-0" /> Gulistan-e-Johar, Karachi</li>
+            <li className="flex items-center gap-2"><Phone size={14} /> <a href="tel:+923337514368" className="hover:text-primary">0333 7514368</a></li>
             <li className="flex items-center gap-2"><Mail size={14} /> <a href="mailto:hello@prestigedental.com" className="hover:text-primary">hello@prestigedental.com</a></li>
           </ul>
         </div>
@@ -649,10 +649,10 @@ function Footer() {
 function FloatingActions() {
   return (
     <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
-      <a href="https://wa.me/15550130198" target="_blank" rel="noopener" aria-label="WhatsApp" className="w-13 h-13 p-3.5 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition" style={{ background: "linear-gradient(135deg, #25d366, #128c7e)" }}>
+      <a href="https://wa.me/923337514368" target="_blank" rel="noopener" aria-label="WhatsApp" className="w-13 h-13 p-3.5 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition" style={{ background: "linear-gradient(135deg, #25d366, #128c7e)" }}>
         <WhatsAppIcon size={22} />
       </a>
-      <a href="tel:+15550130198" aria-label="Call now" className="w-13 h-13 p-3.5 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition" style={{ background: "var(--gradient-primary)" }}>
+      <a href="tel:+923337514368" aria-label="Call now" className="w-13 h-13 p-3.5 rounded-full flex items-center justify-center text-white shadow-xl hover:scale-110 transition" style={{ background: "var(--gradient-primary)" }}>
         <Phone size={22} />
       </a>
     </div>
